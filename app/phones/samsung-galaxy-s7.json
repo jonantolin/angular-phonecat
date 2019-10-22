@@ -1,0 +1,69 @@
+{ 
+    "additionalFeatures": "Adobe\u00ae Flash\u00ae Player compatible; 8.0MP front-facing camera for video chat; eReader pre-loaded; Swype text input technology\r\n", 
+    "android": {
+        "os": "Android 8.0", 
+        "ui": "TouchWiz"
+    }, 
+    "availability": [
+        "AT&T,", 
+        "Sprint,", 
+        "T-Mobile,", 
+        "Verizon"
+    ], 
+    "battery": {
+        "standbyTime": "980 hours", 
+        "talkTime": "", 
+        "type": "Lithium Ion (Li-Ion) (4200 mAH)"
+    }, 
+    "camera": {
+        "features": [
+            "Flash", 
+            "Video"
+        ], 
+        "primary": "12.0 megapixels"
+    }, 
+    "connectivity": {
+        "bluetooth": "Bluetooth 4.0", 
+        "cell": "AT&T: GSM/EDGE : 850/900/1800/1900; 4G : 850/1900/2100\r\n\r\nSprint: CDMA : 850/1900MHz\r\n\r\nT-Mobile: GSM/EDGE : 850/900/1800/1900; 4G : 1700/1900\r\n\r\nVerizon: CDMA : 800MHz/1900MHz", 
+        "gps": true, 
+        "infrared": false, 
+        "wifi": "802.11 b/g/n"
+    }, 
+    "description": "Samsung Galaxy S7 es un teléfono inteligente de gama alta hecho por Samsung Electronics. El dispositivo móvil fue presentado en el Mobile World Congress 2016 en Barcelona, España, junto a su modelo hermano, el Samsung Galaxy S7 Edge. Ambos móviles son los sucesores del Galaxy S6 y del Galaxy S6 Edge, respectivamente. Están disponibles desde el 11 de marzo de 2016 en varios países.", 
+    "display": {
+        "screenResolution": "2K (2560 x 1440)", 
+        "screenSize": "5.1 inches", 
+        "touchScreen": true
+    }, 
+    "hardware": {
+        "accelerometer": true, 
+        "audioJack": "3.5mm", 
+        "cpu": "3.2GHz", 
+        "fmRadio": false, 
+        "physicalKeyboard": false, 
+        "usb": "USB 3.0"
+    }, 
+    "id": "samsung-galaxy-s7", 
+    "images": [
+        "img/phones/samsung-galaxy-s7.0.jpg", 
+        "img/phones/samsung-galaxy-tab.1.jpg", 
+        "img/phones/samsung-galaxy-tab.2.jpg", 
+        "img/phones/samsung-galaxy-tab.3.jpg", 
+        "img/phones/samsung-galaxy-tab.4.jpg", 
+        "img/phones/samsung-galaxy-tab.5.jpg", 
+        "img/phones/samsung-galaxy-tab.6.jpg"
+    ], 
+    "name": "Samsung Galaxy S7\u2122", 
+    "sizeAndWeight": {
+        "dimensions": [
+            "120.39 mm (w)", 
+            "189.99 mm (h)", 
+            "11.9 mm (d)"
+        ], 
+        "weight": "379.88 grams"
+    }, 
+    "storage": {
+        "flash": "16384MB", 
+        "ram": "4GB"
+    }
+}

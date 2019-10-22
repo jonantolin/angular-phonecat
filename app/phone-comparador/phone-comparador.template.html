@@ -1,0 +1,57 @@
+
+<h2>Comparador</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+        <ul class="list-group">
+            <li ng-repeat="phone in $ctrl.phones" ng-click="$ctrl.seleccionar(phone)" class="list-group-item">
+              <img ng-src="{{phone.imageUrl}}" class="imagen-responsive" alt="{{phone.name}}">
+              {{phone.name}}
+
+            </li>
+            
+        </ul>
+    </div>
+    <div class="col-sm-4">
+      <div ng-show="$ctrl.phone1 != null">
+        <h3>{{$ctrl.phone1.name}}</h3>
+        <img ng-src="{{$ctrl.phone1.imageUrl}}" class="imagen-responsive" alt="{{$ctrl.phone1.name}}">
+        <div>Flash:
+           <span>{{$ctrl.phone1.flash}}</span>
+           <span ng-show="$ctrl.phone2.flash != null" class="d-inline">
+              <span ng-show="($ctrl.phone1.flash - $ctrl.phone2.flash) < 0" class="text-danger" >| {{$ctrl.phone1.flash - $ctrl.phone2.flash}}</span>
+              <span ng-show="($ctrl.phone1.flash - $ctrl.phone2.flash) > 0" class="text-success" >| +  {{$ctrl.phone1.flash - $ctrl.phone2.flash}}</span>
+              <span ng-show="($ctrl.phone1.flash - $ctrl.phone2.flash) == 0" class="text-primary" >| = </span> 
+           </span>
+        </div>
+        <div>Ram: <span>{{$ctrl.phone1.ram}}</span>
+          <span ng-show="$ctrl.phone2.ram != null" class="d-inline">
+             <span ng-show="($ctrl.phone1.ram - $ctrl.phone2.ram) < 0" class="text-danger" >| {{$ctrl.phone1.ram - $ctrl.phone2.ram}}</span>
+             <span ng-show="($ctrl.phone1.ram - $ctrl.phone2.ram) > 0" class="text-success" >| +  {{$ctrl.phone1.ram - $ctrl.phone2.ram}}</span>
+             <span ng-show="($ctrl.phone1.ram - $ctrl.phone2.ram) == 0" class="text-primary" >| = </span> 
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4">
+      <div ng-show="$ctrl.phone2 != null">
+        <h3>{{$ctrl.phone2.name}}</h3>
+        <img ng-src="{{$ctrl.phone2.imageUrl}}" class="imagen-responsive" alt="{{$ctrl.phone2.name}}">
+        <div>Flash:
+            <span>{{$ctrl.phone2.flash}}</span>
+            <span ng-show="$ctrl.phone2.flash != null" class="d-inline">
+               <span ng-show="($ctrl.phone2.flash - $ctrl.phone1.flash) < 0" class="text-danger" >| {{$ctrl.phone2.flash - $ctrl.phone1.flash}}</span>
+               <span ng-show="($ctrl.phone2.flash - $ctrl.phone1.flash) > 0" class="text-success" >| +  {{$ctrl.phone2.flash - $ctrl.phone1.flash}}</span>
+               <span ng-show="($ctrl.phone2.flash - $ctrl.phone1.flash) == 0" class="text-primary" >| = </span> 
+            </span>
+         </div>
+         <div>Ram: <span>{{$ctrl.phone2.ram}}</span>
+           <span ng-show="$ctrl.phone2.ram != null" class="d-inline">
+              <span ng-show="($ctrl.phone2.ram - $ctrl.phone1.ram) < 0" class="text-danger" >| {{$ctrl.phone2.ram - $ctrl.phone1.ram}}</span>
+              <span ng-show="($ctrl.phone2.ram - $ctrl.phone1.ram) > 0" class="text-success" >| +  {{$ctrl.phone2.ram - $ctrl.phone1.ram}}</span>
+              <span ng-show="($ctrl.phone2.ram - $ctrl.phone1.ram) == 0" class="text-primary" >| = </span> 
+           </span></div>
+       </div>
+      </div>
