@@ -25,16 +25,17 @@ comparableModule.directive('valorComparable', function(){
   
   var objetoDirectiva = {
     // <span class="label label-success" ng-show="($ctrl.pphone1.flash - $ctrl.pphone2.flash) < 0"> {{$ctrl.pphone1.flash - $ctrl.pphone2.flash}}</span>
-      template:"<span class='{{clase}}'> {{resultado}}</span>",
+      template:"<span class='{{clase}}'> {{(resultado == 0)?'=':resultado}}</span>",
       link:function(scope, iElement, iAttrs, controller, transcludeFn) {
        // alert(iAttrs.prueba);
-        var num1 = iAttrs.val1;
-        var num2 = iAttrs.val2;
-        scope.resultado = num1 - num2;
-        if(num1 >= num2){
+        
+        scope.resultado = iAttrs.val1 - iAttrs.val2;
+        if(scope.resultado > 0){
           scope.clase = "label label-success";
-        }else{
+        }else if(scope.resultado < 0){
           scope.clase = "label label-danger";
+        }else{
+          scope.clase = "label label-info";
         }
 
       }
