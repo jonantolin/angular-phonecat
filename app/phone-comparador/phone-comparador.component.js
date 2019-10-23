@@ -14,8 +14,9 @@ angular.
         self.phone1 = null;
         self.phone2 = null;
         self.orderProp = 'age';
+        self.mock ="hfdkj";
 
-        var self = this;
+        
         this.seleccionar = function(phone){
 
           if(self.phone1 != null && self.phone2 != null){

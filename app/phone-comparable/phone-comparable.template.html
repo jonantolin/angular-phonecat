@@ -1,0 +1,27 @@
+<div class="col-sm-4">
+  
+  <div ng-show="$ctrl.pphone1 != null">
+  <div ng-if="$ctrl.pphone2 != null">   
+      <valor-comparable val1="{{$ctrl.pphone1.flash}}" val2="{{$ctrl.pphone2.flash}}"></valor-comparable>
+    </div>   
+    <h3>{{$ctrl.pphone1.name}}</h3>
+    <img ng-src="{{$ctrl.pphone1.imageUrl}}" class="imagen-responsive" alt="{{$ctrl.pphone1.name}}">
+    <div>Flash:
+       <span>{{$ctrl.pphone1.flash}}</span>
+       <span ng-show="$ctrl.pphone2.flash != null">
+          <span class="label label-danger" ng-show="($ctrl.pphone1.flash - $ctrl.pphone2.flash) < 0"> {{$ctrl.pphone1.flash - $ctrl.pphone2.flash}}</span>
+          <span class="label label-success" ng-show="($ctrl.pphone1.flash - $ctrl.pphone2.flash) > 0"> +  {{$ctrl.pphone1.flash - $ctrl.pphone2.flash}}</span>
+          <span class="label label-info" ng-show="($ctrl.pphone1.flash - $ctrl.pphone2.flash) == 0"> = </span> 
+       </span>
+       
+    </div>
+    <div>Ram: <span>{{$ctrl.pphone1.ram}}</span>
+      <span ng-show="$ctrl.pphone2.ram != null">
+         <span class="label label-danger" ng-show="($ctrl.pphone1.ram - $ctrl.pphone2.ram) < 0"> {{$ctrl.pphone1.ram - $ctrl.pphone2.ram}}</span>
+         <span class="label label-success" ng-show="($ctrl.pphone1.ram - $ctrl.pphone2.ram) > 0" > +  {{$ctrl.pphone1.ram - $ctrl.pphone2.ram}}</span>
+         <span class="label label-info" ng-show="($ctrl.pphone1.ram - $ctrl.pphone2.ram) == 0" > = </span> 
+      </span>
+    </div>
+    <button class="btn btn-info">Comprar</button>
+  </div>
+</div>
