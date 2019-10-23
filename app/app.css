@@ -96,12 +96,29 @@ h1 {
   width: 100%;
   height: auto;
 }
+
+.grande{
+  width: 250px;
+  height: auto;
+}
 .list-group-item{
   margin-bottom: 5px;
 }
 
 .seleccionado{
   box-shadow: 0px 0px 10px 1px green; 
+}
+
+.movil-comparable{
+  position: fixed;
+  top:15%;
+}
+
+.movil-comparable:first-child{
+  left:30%;
+}
+.movil-comparable:last-child{
+  left:60%;
 }
 
 

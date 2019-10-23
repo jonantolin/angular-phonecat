@@ -1,9 +1,9 @@
-<div class="col-sm-4">
-  
+
+
   <div ng-show="$ctrl.pphone1 != null">
   
     <h3>{{$ctrl.pphone1.name}}</h3>
-    <img ng-src="{{$ctrl.pphone1.imageUrl}}" class="imagen-responsive" alt="{{$ctrl.pphone1.name}}">
+    <img ng-src="{{$ctrl.pphone1.imageUrl}}" class="imagen-responsive grande" alt="{{$ctrl.pphone1.name}}">
     <div>Flash:
        <span>{{$ctrl.pphone1.flash}}</span>
        <span ng-if="$ctrl.pphone2 != null && $ctrl.pphone1 != null">   
@@ -18,4 +18,3 @@
     </div>
     <button class="btn btn-info">Comprar</button>
   </div>
-</div>
