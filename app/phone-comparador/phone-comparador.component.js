@@ -5,8 +5,8 @@ angular.
   module('phoneComparador').
   component('phoneComparador', {
     templateUrl: 'phone-comparador/phone-comparador.template.html',
-    controller: ['Phone',
-      function PhoneComparadorController(Phone) {
+    controller: ['Phone', 'compraMovil',
+      function PhoneComparadorController(Phone, compraMovil) {
 
         var self = this;
 
@@ -15,6 +15,11 @@ angular.
         self.phone2 = null;
         self.orderProp = 'age';
         self.mock ="hfdkj";
+
+        
+        self.productoCompra = function(){
+          return compraMovil.getProducto();
+        }
 
         
         this.seleccionar = function(phone){

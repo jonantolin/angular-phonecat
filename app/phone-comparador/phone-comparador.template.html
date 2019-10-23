@@ -1,6 +1,8 @@
 
 <h2>Comparador</h2>
 <div class="container">
+    <div class="alert alert-success" role="alert" ng-if="$ctrl.productoCompra()">Vas a comprar: {{$ctrl.productoCompra().name}}</div>
+  
   <div class="row">
     <div class="col-sm-2">
         <ul class="list-group">

@@ -10,13 +10,17 @@ comparableModule.component('phoneComparable', {
       pphone1: '=',
       pphone2: '='
     },
-    controller: 
-      function PhoneComparableController() {
+    controller: ['compraMovil', 
+      function PhoneComparableController(compraMovil) {
 
         var self = this;
 
+        this.comprarMovil = function(movil){
+          compraMovil.setProducto(movil);
+        }
 
-      }
+
+      }]
     
   });
 
