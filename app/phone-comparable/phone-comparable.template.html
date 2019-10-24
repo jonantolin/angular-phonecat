@@ -1,7 +1,10 @@
+ 
+  <div ng-if="!$ctrl.pphone1">
+   <h3 class="text-center"> Selecciona un móvil</h3>
+   <img ng-src="./img/phones/movil-generico.svg" alt="generico" class="grande">
+  </div>
 
-
-  <div ng-show="$ctrl.pphone1 != null" class="text-center">
-  
+  <div ng-if="$ctrl.pphone1" class="text-center">
     <h3>{{$ctrl.pphone1.name}}</h3>
     <img ng-src="{{$ctrl.pphone1.imageUrl}}" class="imagen-responsive grande" alt="{{$ctrl.pphone1.name}}">
     <div>Flash:

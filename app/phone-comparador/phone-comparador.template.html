@@ -1,12 +1,20 @@
 
 <h2>Comparador</h2>
 <div class="container">
-    <div class="alert alert-success" role="alert" ng-if="$ctrl.productoCompra()">Vas a comprar: {{$ctrl.productoCompra().name}}</div>
+    <div class="alert alert-success" role="alert" ng-if="$ctrl.productoCompra != null">Vas a comprar: {{$ctrl.productoCompra.name}}</div>
   
   <div class="row">
     <div class="col-sm-2">
+      <input  class="form-control" type="text" ng-model="busqueda.name" placeholder="Buscar...">
+      <p>Ram:</p>
+      
+      <input type="radio" name="mRam" ng-click="memMin = 0; memMax = 512"> 0 - 512 Mb<br>
+      <input type="radio" name="mRam" ng-click="memMin = 512; memMax = 1024"> 512 Mb - 1 Gb<br>
+      <input type="radio" name="mRam" ng-click="memMin = 1024; memMax = 2048"> 1 Gb - 2 Gb<br>
+      <input type="radio" name="mRam" ng-click="memMin = 2048; memMax = 4096"> 2 Gb - 4 Gb<br>
+      <input type="radio" name="mRam" ng-click="memMin = 4096; memMax = 35000">4 Gb o más<br>
         <ul class="list-group">
-            <li ng-repeat="phone in $ctrl.phones" ng-click="$ctrl.seleccionar(phone)" class="list-group-item" ng-class="{'seleccionado' : $ctrl.phone1 == phone || $ctrl.phone2 == phone}">
+            <li ng-repeat="phone in $ctrl.phones | filter: busqueda | rangeFilter:'ram':memMin:memMax" ng-click="$ctrl.seleccionar(phone)" class="list-group-item" ng-class="{'seleccionado' : $ctrl.phone1 == phone || $ctrl.phone2 == phone}">
               <img ng-src="{{phone.imageUrl}}" class="imagen-responsive" alt="{{phone.name}}">
               {{phone.name}}
 
@@ -16,7 +24,7 @@
     </div>
     
     <phone-comparable pphone1="$ctrl.phone1" pphone2="$ctrl.phone2" class="movil-comparable movil1"></phone-comparable>
-    <phone-comparable pphone1="$ctrl.phone2" pphone2="$ctrl.phone1"  class="movil-comparable movil2"></phone-comparable>
+    <phone-comparable pphone1="$ctrl.phone2" pphone2="$ctrl.phone1" class="movil-comparable movil2"></phone-comparable>
 
   </div>
 </div>

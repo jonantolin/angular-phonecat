@@ -10,13 +10,14 @@ comparableModule.component('phoneComparable', {
       pphone1: '=',
       pphone2: '='
     },
-    controller: ['compraMovil', 
-      function PhoneComparableController(compraMovil) {
+    controller: ['compraMovil', '$scope',
+      function PhoneComparableController(compraMovil, $scope) {
 
         var self = this;
 
         this.comprarMovil = function(movil){
-          compraMovil.setProducto(movil);
+          // compraMovil.setProducto(movil); // Para mandar al servicio comun, pero lo hare por evento
+          $scope.$emit('eventoCompra',{telefono: movil} );
         }
 
 
@@ -28,20 +29,20 @@ comparableModule.component('phoneComparable', {
 comparableModule.directive('valorComparable', function(){
   
   var objetoDirectiva = {
-    // <span class="label label-success" ng-show="($ctrl.pphone1.flash - $ctrl.pphone2.flash) < 0"> {{$ctrl.pphone1.flash - $ctrl.pphone2.flash}}</span>
+    
       restrict: 'E',
       replace: true,
-      template:"<span class='{{clase}}'> {{(resultado == 0)?'=':resultado}}</span>",
+      template:"<span class='label label-{{clase}}'> {{(resultado == 0)?'=':resultado}}</span>",
       link:function(scope, iElement, iAttrs, controller, transcludeFn) {
-       // alert(iAttrs.prueba);
-        
+              
         scope.resultado = iAttrs.val1 - iAttrs.val2;
+        
         if(scope.resultado > 0){
-          scope.clase = "label label-success";
+          scope.clase = "success";
         }else if(scope.resultado < 0){
-          scope.clase = "label label-danger";
+          scope.clase = "danger";
         }else{
-          scope.clase = "label label-info";
+          scope.clase = "info";
         }
 
       }
