@@ -103,7 +103,7 @@ h1 {
 }
 
 .peque{
-  width: 125px;
+  width: 60px;
   height: auto;
 }
 .list-group-item{
@@ -116,7 +116,7 @@ h1 {
 
 .movil-comparable{
   position: fixed;
-  top:25%;
+  top:30%;
 }
 
 .movil1{
@@ -131,16 +131,17 @@ h1 {
   position:fixed;
   top:5%;
   right: 5%;
-  z-index: 999;
+  z-index: 99;
 }
+
 
 .carrito-desplegable{
   background-color: white;
   border: 2px solid red;
   position:fixed;
   top:10%;
-  right: 8%;
-  z-index: 999;
+  right: 5%;
+  z-index: 99;
   border-radius: 10px;
   padding: 1em;
 }

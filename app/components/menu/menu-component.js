@@ -5,8 +5,8 @@ angular.module('phonecatApp').component('menuNav', {
 
         var self = this;
 
-        self.movilesCarrito = function(){
-          return compraMovil.getProducto();
+        self.contMoviles = function(){
+          return compraMovil.getProductos().length;
         }
         
     

@@ -11,7 +11,15 @@ angular.
         var self = this;
 
         self.movilesCarrito = function(){
-          return compraMovil.getProducto();
+          return compraMovil.getProductos();
+        }
+
+        self.borrarMovil = function(movil){
+          compraMovil.removeProducto(movil);
+        }
+
+        self.contMoviles = function(){
+          return compraMovil.getProductos().length;
         }
     
       }

@@ -6,12 +6,15 @@ angular.
     function() {
 
       return {
-        producto: [],
-        getProducto: function() {
-            return this.producto;
+        productos: [],
+        getProductos: function() {
+            return this.productos;
         },
         setProducto: function(p) {
-            this.producto.push(p);
+            this.productos.push(p);
+        },
+        removeProducto: function(p){
+            this.productos.splice(this.productos.indexOf(p),1);
         }
 
       }; //end return

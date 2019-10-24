@@ -1,18 +1,19 @@
 
 <h2>Comparador</h2>
+<hr>
 <div class="container">
     <div class="alert alert-success" role="alert" ng-if="$ctrl.productoCompra != null">Añadido al carrito: {{$ctrl.productoCompra.name}}</div>
   
   <div class="row">
     <div class="col-sm-2">
-      <input  class="form-control" type="text" ng-model="busqueda.name" placeholder="Buscar...">
+      <input  class="form-control" type="text" ng-model="busqueda.name" placeholder="Buscar..."><br>
       <p>Ram:</p>
       
       <input type="radio" name="mRam" ng-click="memMin = 0; memMax = 512"> 0 - 512 Mb<br>
       <input type="radio" name="mRam" ng-click="memMin = 512; memMax = 1024"> 512 Mb - 1 Gb<br>
       <input type="radio" name="mRam" ng-click="memMin = 1024; memMax = 2048"> 1 Gb - 2 Gb<br>
       <input type="radio" name="mRam" ng-click="memMin = 2048; memMax = 4096"> 2 Gb - 4 Gb<br>
-      <input type="radio" name="mRam" ng-click="memMin = 4096; memMax = 35000"> 4 Gb o más<br>
+      <input type="radio" name="mRam" ng-click="memMin = 4096; memMax = 35000"> 4 Gb o más<br><br>
         <ul class="list-group">
             <li ng-repeat="phone in $ctrl.phones | filter: busqueda | rangeFilter:'ram':memMin:memMax" ng-click="$ctrl.seleccionar(phone)" class="list-group-item" ng-class="{'seleccionado' : $ctrl.phone1 == phone || $ctrl.phone2 == phone}">
               <img ng-src="{{phone.imageUrl}}" class="imagen-responsive" alt="{{phone.name}}">
