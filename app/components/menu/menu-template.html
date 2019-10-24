@@ -37,7 +37,7 @@
      <h4 class="text-danger">Sin productos aun</h4>
     </div>
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="phone in $ctrl.movilesCarrito()">
+      <li class="list-group-item" ng-repeat="phone in $ctrl.movilesCarrito() track by $index">
           
           {{phone.name}}
       </li>

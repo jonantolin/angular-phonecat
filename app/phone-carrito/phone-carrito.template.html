@@ -6,7 +6,17 @@
   </div>
   <div class="container">
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="phone in $ctrl.movilesCarrito()">
+      <!-- track by $index en ng-repeat porque por defecto da error si se repiten valores en el iterable.
+         
+        Este problema ocurre porque Angular internamente asocia o "establece como referencia" los 
+        objetos del DOM (en este caso 'li') con la referencia del objeto (en este caso un movil) 
+        y dos 'li' distintos no pueden estar referenciados de manera identica (porque no son el mismo 'li'), 
+        'track by $index' hace que las referencias de los 'li' sean la posicion del objeto en el array que se itera, 
+        que obviamente siempre sera distinta aunque el mismo movil esté varias veces en el array
+
+        ver -> https://docs.angularjs.org/error/ngRepeat/dupes
+        -->
+      <li class="list-group-item" ng-repeat="phone in $ctrl.movilesCarrito() track by $index">
           <img ng-src="{{phone.imageUrl}}" class="imagen-responsive peque" alt="{{phone.name}}">
           {{phone.name}}
       </li>

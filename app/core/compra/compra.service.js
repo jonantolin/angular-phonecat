@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('core.phone').
+  module('core').
   factory('compraMovil',
     function() {
 
