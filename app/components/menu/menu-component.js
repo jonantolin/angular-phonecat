@@ -1,11 +1,16 @@
 angular.module('phonecatApp').component('menuNav', {
 
     templateUrl: './components/menu/menu-template.html',
-    controller: function menuNav(){
+    controller: ['compraMovil',function menuNav(compraMovil){
 
+        var self = this;
+
+        self.movilesCarrito = function(){
+          return compraMovil.getProducto();
+        }
+        
+    
+    }]
 
     }
-}
-
-
 );

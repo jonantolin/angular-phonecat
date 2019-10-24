@@ -101,6 +101,11 @@ h1 {
   width: 250px;
   height: auto;
 }
+
+.peque{
+  width: 125px;
+  height: auto;
+}
 .list-group-item{
   margin-bottom: 5px;
 }
@@ -119,6 +124,23 @@ h1 {
 }
 .movil2{
   left:60%;
+}
+
+.boton-carrito{
+
+  position:fixed;
+  top:5%;
+  right: 5%;
+  z-index: 999;
+}
+
+.carrito-desplegable{
+  background-color: white;
+  border: 2px solid red;
+  position:fixed;
+  top:10%;
+  right: 8%;
+  z-index: 999;
 }
 
 

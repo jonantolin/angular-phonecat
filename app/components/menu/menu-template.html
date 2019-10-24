@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,6 +18,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Inicio </a></li>
           <li class="active"><a href="#!/comparador">Comparador </a></li>
+          <li class="active"><a href="#!/carrito">Carrito </a></li>
          <!-- <li><a href="#">Inicio</a></li> -->
           
             </ul>
@@ -25,3 +28,19 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+  <button class="btn btn-danger boton-carrito" ng-init="carrito=false" ng-click="carrito = !carrito"><i class="fas fa-shopping-cart"></i></button>
+
+  <div ng-if="carrito" class="carrito-desplegable">
+    <p>Tu carrito: </p>
+     <div ng-if="$ctrl.movilesCarrito().length == 0">
+     <h4 class="text-danger">Sin productos aun</h4>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="phone in $ctrl.movilesCarrito()">
+          
+          {{phone.name}}
+      </li>
+    </ul>
+  </div>
+  

@@ -6,12 +6,12 @@ angular.
     function() {
 
       return {
-        producto: null,
+        producto: [],
         getProducto: function() {
             return this.producto;
         },
-        setProducto: function(msg) {
-            this.producto = msg;
+        setProducto: function(p) {
+            this.producto.push(p);
         }
 
       }; //end return

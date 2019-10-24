@@ -24,11 +24,6 @@ angular.
         $scope.memMin = 0;
         $scope.memMax = 35000;
         
-        $scope.ui = {
-          min: 0,
-          max: 512,
-          sort: 'name'
-        }; 
 
         $scope.$on('eventoCompra', function(event, data){
 
