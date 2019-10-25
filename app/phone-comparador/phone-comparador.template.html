@@ -15,7 +15,7 @@
       <input type="radio" name="mRam" ng-click="memMin = 2048; memMax = 4096"> 2 Gb - 4 Gb<br>
       <input type="radio" name="mRam" ng-click="memMin = 4096; memMax = 35000"> 4 Gb o más<br><br>
         <ul class="list-group">
-            <li ng-repeat="phone in $ctrl.phones | filter: busqueda " ng-click="$ctrl.seleccionar(phone)" class="list-group-item" ng-class="{'seleccionado' : $ctrl.phone1 == phone || $ctrl.phone2 == phone}">
+            <li ng-repeat="phone in $ctrl.phones | filter: busqueda | rangeFilter:'ram':memMin:memMax " ng-click="$ctrl.seleccionar(phone)" class="list-group-item" ng-class="{'seleccionado' : $ctrl.phone1 == phone || $ctrl.phone2 == phone}">
               <img ng-src="{{phone.imageUrl}}" class="imagen-responsive" alt="{{phone.name}}">
               {{phone.name}}
 

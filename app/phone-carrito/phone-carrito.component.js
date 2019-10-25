@@ -11,6 +11,21 @@ angular.
         var self = this;
         self.carrito  = compraMovil.getProductos();
 
+       
+        /*self.carrito = function(){
+          return compraMovil.getProductos();
+        }*/
+       
+
+        //TODO mirar porque no refresca automaticamente el carrito, nuevo movil y cantidad
+        $scope.$on('eventoCompra', function(event, data){
+
+          self.carrito  = compraMovil.getProductos();
+          console.debug('carrito evento compraaaaaaaa');
+        });
+
+       //self.carrito = compraMovil.getProductos();
+
        //Todo pintar cantidad de unidades
         
         console.log('controlador carrito');

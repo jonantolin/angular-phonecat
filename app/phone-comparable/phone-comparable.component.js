@@ -15,10 +15,12 @@ comparableModule.component('phoneComparable', {
 
         var self = this;
 
+        
         this.comprarMovil = function(movil){
           // compraMovil.setProducto(movil); // Para mandar al servicio comun, pero lo hare por evento
-          $scope.$emit('eventoCompra',{telefono: movil} );
           compraMovil.setProducto(movil);
+          $scope.$emit('eventoCompra',{telefono: movil} );
+          
         }
 
 

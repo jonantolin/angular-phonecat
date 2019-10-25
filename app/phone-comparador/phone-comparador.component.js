@@ -63,7 +63,7 @@ angular.
   /**
    * Filtro para filtrar por rango (de ram, etc)
    */
-  /*
+  
   angular.
   module('phoneComparador')
   .filter('rangeFilter', function () {
@@ -82,4 +82,4 @@ angular.
 
     // poner en template -> | rangeFilter:'ram':memMin:memMax
 });
-*/
+

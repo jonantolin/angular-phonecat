@@ -2,11 +2,11 @@
 <h2>Carrito</h2>
 <hr>
 
-  <div ng-if="$ctrl.carrito.size == 0">
+  <div ng-if="$ctrl.carrito.length == 0">
     <h3 class="text-danger">Todavía no has añadido móviles al carrito</h3>
   </div>
  
-  <h4 ng-show="$ctrl.carrito.size  != 0">{{$ctrl.carrito.size }} productos en el carrito</h4>
+  <h4 ng-show="$ctrl.carrito.length  != 0">{{$ctrl.carrito.size }} productos en el carrito</h4>
 
   <ul class="list-group">
     <!-- track by $index en ng-repeat porque por defecto da error si se repiten valores en el iterable.
@@ -20,12 +20,11 @@
       ver -> https://docs.angularjs.org/error/ngRepeat/dupes
       -->
     <li class="list-group-item" ng-repeat='telefono in $ctrl.carrito'>
-        <!-- <button class="btn btn-secondary" ng-click=$ctrl.borrarMovil(phone)><i class="far fa-trash-alt text-danger"></i></button> -->
+       
+        <span ng-show="{{telefono.cantidad > 1}}" class="badge">{{telefono.cantidad}}</span>
         <img ng-src="{{telefono.imagen}}" class="imagen-responsive peque" alt="{{telefono.name}}">
         <span>{{telefono.name}} </span>
-        <span ng-show="{{telefono.cantidad > 1}}" class="badge">{{telefono.cantidad}}</span>
-
-        
+ 
     </li>
   </ul>
 

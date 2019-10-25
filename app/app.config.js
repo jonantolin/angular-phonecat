@@ -17,6 +17,9 @@ angular.
         when('/carrito', {
           template: '<phone-carrito></phone-carrito>'
         }).
+        when('/nuevo', {
+          template: '<phone-nuevo></phone-nuevo>'
+        }).
         when('/404', {
           templateUrl: 'error404.html'
         }).

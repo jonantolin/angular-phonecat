@@ -1,0 +1,39 @@
+
+<h2>Nuevo móvil</h2>
+<hr>
+
+
+
+<div class="container">
+
+  <div class="row">
+  <div class="col-sm-6">
+    <form name="formuMovil" novalidate ng-submit="guardar_datos(formulario.$valid)">
+
+    
+
+      <label for="">Nombre: </label>
+      <input class="form-control" type="text" name="name" id="name" required minLenght="10">
+
+      <label for="">Descripción: </label>
+      <input class="form-control" type="text" name="description" required>
+
+      <label for="">Memoria Ram: </label>
+      <input class="form-control" type="text" name="ram" required>
+
+      <label for="">Memoria Flash: </label>
+      <input class="form-control" type="text" name="flash" required>
+
+      <button type="submit" ng-disabled="!formuMovil.$valid" class="btn btn-primary">Guardar</button>
+
+    </form>
+  </div>
+
+  <div class="col-sm-4">
+  {{formuMovil | json:2}}
+  </div>
+
+</div>
+
+
+    
