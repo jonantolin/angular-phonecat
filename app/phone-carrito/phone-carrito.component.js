@@ -9,18 +9,13 @@ angular.
       function PhoneComparadorController(Phone, compraMovil, $scope) {
 
         var self = this;
+        self.carrito  = compraMovil.getProductos();
 
-        self.movilesCarrito = function(){
-          return compraMovil.getProductos();
-        }
+       //Todo pintar cantidad de unidades
+        
+        console.log('controlador carrito');
 
-        self.borrarMovil = function(movil){
-          compraMovil.removeProducto(movil);
-        }
 
-        self.contMoviles = function(){
-          return compraMovil.getProductos().length;
-        }
     
       }
     ]

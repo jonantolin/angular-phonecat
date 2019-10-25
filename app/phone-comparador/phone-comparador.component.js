@@ -10,7 +10,16 @@ angular.
 
         var self = this;
 
-        self.phones = Phone.query();
+        Phone.getAll().
+        then( 
+          function successCallback(response) {
+            console.trace("Success");
+            self.phones = response.data;
+          },
+          function errorCallback(response) {
+            console.warn("Error");
+          }
+        );
         self.phone1 = null;
         self.phone2 = null;
         self.orderProp = 'age';
@@ -54,6 +63,7 @@ angular.
   /**
    * Filtro para filtrar por rango (de ram, etc)
    */
+  /*
   angular.
   module('phoneComparador')
   .filter('rangeFilter', function () {
@@ -69,4 +79,7 @@ angular.
         }
         return range;
     };
+
+    // poner en template -> | rangeFilter:'ram':memMin:memMax
 });
+*/
