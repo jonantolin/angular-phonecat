@@ -10,7 +10,7 @@ angular.
       //this.phones = Phone.query();
       console.trace('PhoneListController');
       self = this;
-      self.phones = {};
+      self.phones = [];
       
       Phone.getAll().then( 
         function successCallback(response) {

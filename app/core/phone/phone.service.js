@@ -3,7 +3,7 @@
 angular.
   module('core.phone').factory('Phone', ['$http',  function($http) {
 
-    let service = {};
+    let service = [];
     let endpoint = "http://localhost:3000/phones/";
 
     service.getAll = function(){      

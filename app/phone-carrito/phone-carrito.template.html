@@ -6,22 +6,13 @@
     <h3 class="text-danger">Todavía no has añadido móviles al carrito</h3>
   </div>
  
-  <h4 ng-show="$ctrl.carrito.length  != 0">{{$ctrl.carrito.size }} productos en el carrito</h4>
+  <h4 ng-show="$ctrl.carrito.length  != 0">{{$ctrl.carrito.length}} productos en el carrito</h4>
 
   <ul class="list-group">
-    <!-- track by $index en ng-repeat porque por defecto da error si se repiten valores en el iterable.
-        
-      Este problema ocurre porque Angular internamente asocia o "establece como referencia" los 
-      objetos del DOM (en este caso 'li') con la referencia del objeto (en este caso un movil) 
-      y dos 'li' distintos no pueden estar referenciados de manera identica (porque no son el mismo 'li'), 
-      'track by $index' hace que las referencias de los 'li' sean la posicion del objeto en el array que se itera, 
-      que obviamente siempre sera distinta aunque el mismo movil esté varias veces en el array
-
-      ver -> https://docs.angularjs.org/error/ngRepeat/dupes
-      -->
+    
     <li class="list-group-item" ng-repeat='telefono in $ctrl.carrito'>
        
-        <span ng-show="{{telefono.cantidad > 1}}" class="badge">{{telefono.cantidad}}</span>
+        <span class="badge">{{telefono.cantidad}}</span>
         <img ng-src="{{telefono.imagen}}" class="imagen-responsive peque" alt="{{telefono.name}}">
         <span>{{telefono.name}} </span>
  

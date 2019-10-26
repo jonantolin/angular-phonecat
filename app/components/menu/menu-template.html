@@ -30,13 +30,18 @@
     </div><!-- /.container-fluid -->
   </nav>
 
+  
   <div>
-    <button class="btn btn-danger boton-carrito" ng-init="carrito=false" ng-click="carrito = !carrito">
-      <i class="fas fa-shopping-cart"></i> <span ng-show="$ctrl.contMoviles() != 0" class="badge">{{$ctrl.contMoviles()}}</span>
+    <button class="btn btn-danger boton-carrito" ng-init="carrito=false;" ng-click="carrito = !carrito">
+        
+      <i class="fas fa-shopping-cart"></i> 
     </button>
     
   </div>
+  
   <div ng-if="carrito" class="carrito-desplegable">
     <phone-carrito></phone-carrito>
   </div>
+
+
   

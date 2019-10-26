@@ -9,12 +9,13 @@
       <input  class="form-control" type="text" ng-model="busqueda.name" placeholder="Buscar..."><br>
       <p>Ram:</p>
       
+      <input type="radio" name="mRam" ng-click="memMin = 0; memMax = 35000" checked> Todos <br>
       <input type="radio" name="mRam" ng-click="memMin = 0; memMax = 512"> 0 - 512 Mb<br>
       <input type="radio" name="mRam" ng-click="memMin = 512; memMax = 1024"> 512 Mb - 1 Gb<br>
       <input type="radio" name="mRam" ng-click="memMin = 1024; memMax = 2048"> 1 Gb - 2 Gb<br>
       <input type="radio" name="mRam" ng-click="memMin = 2048; memMax = 4096"> 2 Gb - 4 Gb<br>
       <input type="radio" name="mRam" ng-click="memMin = 4096; memMax = 35000"> 4 Gb o más<br><br>
-        <ul class="list-group">
+        <ul class="list-group" ng-if="$ctrl.phones.length"> <!-- no insertara la lista (y no aplicara el filtro antes de que se cargue) mientras este vacia la variable (que es asincrona) -->
             <li ng-repeat="phone in $ctrl.phones | filter: busqueda | rangeFilter:'ram':memMin:memMax " ng-click="$ctrl.seleccionar(phone)" class="list-group-item" ng-class="{'seleccionado' : $ctrl.phone1 == phone || $ctrl.phone2 == phone}">
               <img ng-src="{{phone.imageUrl}}" class="imagen-responsive" alt="{{phone.name}}">
               {{phone.name}}

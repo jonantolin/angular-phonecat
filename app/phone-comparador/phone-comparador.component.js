@@ -10,6 +10,11 @@ angular.
 
         var self = this;
 
+        this.$onInit = function(){
+          $scope.listaMoviles();
+        }
+
+        $scope.listaMoviles = function(){
         Phone.getAll().
         then( 
           function successCallback(response) {
@@ -20,6 +25,9 @@ angular.
             console.warn("Error");
           }
         );
+
+        
+        };
         self.phone1 = null;
         self.phone2 = null;
         self.orderProp = 'age';
@@ -30,6 +38,7 @@ angular.
           
         }*/
 
+        
         $scope.memMin = 0;
         $scope.memMax = 35000;
         
@@ -68,16 +77,11 @@ angular.
   module('phoneComparador')
   .filter('rangeFilter', function () {
     return function (items, attr, min, max) {
-        var range = [],
-            min=parseFloat(min),
-            max=parseFloat(max);
-        for (var i=0, l=items.length; i<l; ++i){
-            var item = items[i];
-            if(item[attr]<=max && item[attr]>=min){
-                range.push(item);
+        return items.filter(item => {
+            if(item[attr]<=parseFloat(max) && item[attr]>=parseFloat(min)){
+              return item;
             }
-        }
-        return range;
+          });
     };
 
     // poner en template -> | rangeFilter:'ram':memMin:memMax
