@@ -5,8 +5,6 @@ angular.
   factory('compraMovil',
     function() {
 
-
-
       return {
         productos: new Map(),
         getProductos: function() {

@@ -1,6 +1,6 @@
 'use strict';
 
-// Register `phoneList` component, along with its associated controller and template
+
 var comparableModule = angular.module('phoneComparable');
 
 
@@ -14,15 +14,13 @@ comparableModule.component('phoneComparable', {
       function PhoneComparableController(compraMovil, $scope) {
 
         var self = this;
-
-        
+    
         this.comprarMovil = function(movil){
-          // compraMovil.setProducto(movil); // Para mandar al servicio comun, pero lo hare por evento
+          
           compraMovil.setProducto(movil);
           $scope.$emit('eventoCompra',{telefono: movil} );
           
         }
-
 
       }]
     

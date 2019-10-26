@@ -5,8 +5,8 @@ angular.
   module('phoneComparador').
   component('phoneComparador', {
     templateUrl: 'phone-comparador/phone-comparador.template.html',
-    controller: ['Phone', 'compraMovil', '$scope',
-      function PhoneComparadorController(Phone, compraMovil, $scope) {
+    controller: ['Phone', '$scope',
+      function PhoneComparadorController(Phone, $scope) {
 
         var self = this;
 
@@ -31,22 +31,9 @@ angular.
         self.phone1 = null;
         self.phone2 = null;
         self.orderProp = 'age';
-     
-        // Esto esta bien para mandar mensajes a traves de un servicio pero lo recojo en un evento
-       /* self.productoCompra = function(){
-          // return compraMovil.getProducto(); Esto esta bien para mandar mensajes a traves de un servicio
-          
-        }*/
-
         
         $scope.memMin = 0;
         $scope.memMax = 35000;
-        
-
-        $scope.$on('eventoCompra', function(event, data){
-
-          self.productoCompra = data.telefono;
-        });
     
         this.seleccionar = function(phone){
 
@@ -57,7 +44,6 @@ angular.
 
          
           if(self.phone1 == null){
-           // self.phone1 = phone;
            self.phone1 = phone;
           }else{
             self.phone2 = phone;
