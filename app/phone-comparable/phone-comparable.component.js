@@ -13,13 +13,12 @@ comparableModule.component('phoneComparable', {
     controller: ['compraMovil', '$scope',
       function PhoneComparableController(compraMovil, $scope) {
 
-        var self = this;
-    
+
         this.comprarMovil = function(movil){
           
           compraMovil.setProducto(movil);
           $scope.$emit('eventoCompra',{telefono: movil} );
-          
+    
         }
 
       }]

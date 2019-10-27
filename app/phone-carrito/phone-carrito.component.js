@@ -6,7 +6,7 @@ angular.
   component('phoneCarrito', {
     templateUrl: 'phone-carrito/phone-carrito.template.html',
     controller: ['compraMovil', '$scope',
-      function PhoneComparadorController(compraMovil, $scope) {
+      function PhoneCarritoController(compraMovil) {
 
         var self = this;
         self.carrito  = compraMovil.getProductos();

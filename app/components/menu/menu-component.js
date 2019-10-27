@@ -1,7 +1,9 @@
 angular.module('phonecatApp').component('menuNav', {
 
     templateUrl: './components/menu/menu-template.html',
-    controller: ['compraMovil','$scope', function menuNav(compraMovil, $scope){
+    controller: [ function menuNav(){
+
+        
 
         var self = this;
 

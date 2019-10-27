@@ -10,31 +10,40 @@ angular.
 
         var self = this;
 
-        this.$onInit = function(){
-          $scope.listaMoviles();
-        }
+        self.phone1 = null; // el movil que sera pasado al primer componente 'comparable'
+        self.phone2 = null; // el movil que sera pasado al segundo componente 'comparable'
+        self.orderProp = 'age';
+        
+        // valores iniciales para el filtro de ram
+        $scope.memMin = 0;
+        $scope.memMax = 35000;
 
-        $scope.listaMoviles = function(){
+        /**
+         * Llamada al servicio REST para cargar la lista vertical
+         */
         Phone.getAll().
         then( 
           function successCallback(response) {
-            console.trace("Success");
+            console.info("Success");
             self.phones = response.data;
           },
           function errorCallback(response) {
             console.warn("Error");
           }
         );
+        
 
-        
-        };
-        self.phone1 = null;
-        self.phone2 = null;
-        self.orderProp = 'age';
-        
-        $scope.memMin = 0;
-        $scope.memMax = 35000;
-    
+        /**
+         * Evento capturado cuando componente 'comparable' emite 'eventoCompra' (al pulsar en 'Comprar')
+         */
+        $scope.$on('eventoCompra', function(event, data){
+          self.productoCompra = data.telefono;
+        });
+
+      
+        /**
+         * Funcion para establecer en los componentes 'comparable' los phones seleccionados de la lista
+         */
         this.seleccionar = function(phone){
 
           if(self.phone1 != null && self.phone2 != null){
@@ -50,10 +59,10 @@ angular.
           }
 
          
-        }
-      }
-    ]
-  });
+        }// end seleccionar
+      } //end function controller
+    ] //end controller
+  });//end component
 
   /**
    * Filtro para filtrar por rango (de ram, etc)

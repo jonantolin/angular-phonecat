@@ -6,28 +6,54 @@
 
   <div class="row">
   <div class="col-sm-6">
-    <form name="formuMovil" novalidate ng-submit="guardar_datos(formulario.$valid)">
 
-      <label for="">Nombre: </label>
-      <input class="form-control" type="text" name="name" id="name" required minLenght="10">
+      
+    <div ng-if="$ctrl.mensaje != null" class="alert alert-{{($ctrl.agregado)?'success':'danger'}}" role="alert">{{$ctrl.mensaje}}</div>
 
-      <label for="">Descripción: </label>
-      <input class="form-control" type="text" name="description" required>
+    <form name="formuMovil" ng-submit="guardar_datos(formuMovil.$valid)" novalidate>
 
-      <label for="">Memoria Ram: </label>
-      <input class="form-control" type="text" name="ram" required>
+      <div class="form-group" ng-class="{'has-success': formuMovil.name.$valid && !formuMovil.name.$pristine,
+      'has-error': !formuMovil.name.$valid && !formuMovil.name.$pristine }">
+        <label for="name">Nombre: </label>
+        <input class="form-control" type="text" ng-model="datosForm.name" name="name" id="name" required minlength="5" 
+        maxlength="150" placeholder="Introduce nombre: (5-150 caracteres)">
+        <p class="help-block" ng-show="!formuMovil.name.$valid && !formuMovil.name.$pristine">Entre 2-50 caracteres</p>
+      </div>
 
-      <label for="">Memoria Flash: </label>
-      <input class="form-control" type="text" name="flash" required>
+      <div class="form-group" ng-class="{'has-success': formuMovil.description.$valid && !formuMovil.description.$pristine,
+      'has-error': !formuMovil.description.$valid && !formuMovil.description.$pristine }">
+        <label for="description">Descripción: </label>
+        <input class="form-control" type="text" ng-model="datosForm.description" name="description" minlength="5" 
+        maxlength="150" placeholder="Introduce descripción: (10-200 caracteres)" required>
+        <p class="help-block" ng-show="!formuMovil.name.$valid && !formuMovil.name.$pristine">Entre 10-200 caracteres</p>
+      </div>
+
+      <div class="form-group" ng-class="{'has-success': formuMovil.ram.$valid && !formuMovil.ram.$pristine,
+      'has-error': !formuMovil.ram.$valid && !formuMovil.ram.$pristine }">
+        <label for="ram">Memoria Ram: </label>
+        <input class="form-control" type="number" ng-model="datosForm.ram" name="ram" placeholder="Número en megabytes" min="256" max="65000" required >
+        <p class="help-block" ng-show="!formuMovil.ram.$valid && !formuMovil.ram.$pristine">Un numero entero de megabytes (min: 256, max: 65000, sin coma ni punto)</p>
+      </div>
+
+      <div class="form-group" ng-class="{'has-success': formuMovil.flash.$valid && !formuMovil.flash.$pristine,
+      'has-error': !formuMovil.flash.$valid && !formuMovil.flash.$pristine }">
+        <label for="flash">Memoria Flash: </label>
+        <input class="form-control" type="number" ng-model="datosForm.flash" name="flash" placeholder="Número en megabytes" min="256" max="65000" required >
+        <p class="help-block" ng-show="!formuMovil.flash.$valid && !formuMovil.flash.$pristine">Un numero entero de megabytes (min: 256, max: 65000, sin coma ni punto)</p>
+      </div>
 
       <button type="submit" ng-disabled="!formuMovil.$valid" class="btn btn-primary">Guardar</button>
 
     </form>
   </div>
 
+  <!--
   <div class="col-sm-4">
-  {{formuMovil | json:2}}
+    <pre>
+  {{formuMovil | json}}
+  </pre>
   </div>
+  -->
 
 </div>
 

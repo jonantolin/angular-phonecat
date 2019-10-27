@@ -8,13 +8,13 @@ angular.
     controller: ['Phone',
     function PhoneListController(Phone) {
       //this.phones = Phone.query();
-      console.trace('PhoneListController');
+      console.log('PhoneListController');
       self = this;
       self.phones = [];
       
       Phone.getAll().then( 
         function successCallback(response) {
-          console.trace("Success");
+          console.log("Success %o", response);
           self.phones = response.data;
         },
         function errorCallback(response) {
