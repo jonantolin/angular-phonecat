@@ -5,11 +5,29 @@ angular.
   module('phoneNuevo').
   component('phoneNuevo', {
     templateUrl: 'phone-nuevo/phone-nuevo.template.html',
-    controller: ['Phone', '$scope',
-      function PhoneNuevoController(Phone, $scope) {
+    controller: ['$routeParams', 'Phone', '$scope', 
+      function PhoneNuevoController($routeParams, Phone, $scope) {
 
         self = this;
         self.mensaje = null;
+
+        $scope.datosForm = [];
+
+        let id = $routeParams.phoneId;
+        if(id){
+
+          Phone.getById(id).then(
+            (res)=>{
+              console.debug('telefono encontrado');
+              $scope.datosForm = res.data;
+            },
+            ()=>{
+              console.warn('telefono NO encontrado');
+            }
+          );
+
+        }
+
 
         $scope.guardar_datos = function(valido) { //recibe $valid desde la view que indica si los datos pasan la validacion
 

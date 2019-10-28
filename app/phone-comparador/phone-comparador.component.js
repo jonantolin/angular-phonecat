@@ -73,9 +73,7 @@ angular.
   .filter('rangeFilter', function () {
     return function (items, attr, min, max) {
         return items.filter(item => {
-            if(item[attr]<=parseFloat(max) && item[attr]>=parseFloat(min)){
-              return item;
-            }
+            return item[attr]<=parseFloat(max) && item[attr]>=parseFloat(min)    
           });
     };
 
