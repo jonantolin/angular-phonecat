@@ -42,18 +42,18 @@
         <p class="help-block" ng-show="!formuMovil.flash.$valid && !formuMovil.flash.$pristine">Un numero entero de megabytes (min: 256, max: 65000, sin coma ni punto)</p>
       </div>
 
-      <button type="submit" ng-disabled="!formuMovil.$valid" class="btn btn-primary">Guardar</button>
+      <button type="submit" ng-disabled="formuMovil.$invalid || formuMovil.$pristine" class="btn btn-primary">Guardar</button>
 
     </form>
   </div>
 
-  <!--
+  
   <div class="col-sm-4">
     <pre>
   {{formuMovil | json}}
   </pre>
   </div>
-  -->
+  
 
 </div>
 
