@@ -16,14 +16,16 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Inicio </a></li>
-          <li class="active"><a href="#!/comparador">Comparador </a></li>
-          <li class="active"><a href="#!/carrito">Carrito </a></li>
-          <li class="active"><a href="#!/nuevo">Nuevo </a></li>
-         <!-- <li><a href="#">Inicio</a></li> -->
-          
-            </ul>
+          <li ng-repeat="enlace in enlaces" ng-click="$ctrl.cambiarActivo(enlace)" ng-class="(enlace.activo)?'activo':''">
+            <a ng-href="{{enlace.ruta}}">{{enlace.nombre}}</a>
           </li>
+          <!--
+          <li><a href="#">Inicio </a></li>
+          <li><a href="#!/comparador">Comparador </a></li>
+          <li><a href="#!/carrito">Carrito </a></li>
+          <li><a href="#!/nuevo">Nuevo </a></li>
+          -->
+            
         </ul>
         
       </div><!-- /.navbar-collapse -->

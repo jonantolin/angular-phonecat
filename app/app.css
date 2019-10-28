@@ -7,6 +7,25 @@ h1 {
   margin-top: 0;
 }
 
+nav li:hover{
+  background-color: #d9534f;
+  font-weight: bold;
+  color: white !important;
+  transition: 0.2s linear;
+}
+
+nav li:hover a{
+  color:white !important;
+}
+
+.activo{
+  background-color :#d9534f;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in;
+}
+.activo a{
+  color:white !important;
+}
 /* View: Phone list */
 .phones {
   list-style: none;
