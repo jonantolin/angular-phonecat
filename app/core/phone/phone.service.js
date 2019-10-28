@@ -24,6 +24,12 @@ angular.
       return $http.post(url, movil);
     }
 
+    service.update = function(id, movil){
+      let url = endpoint + id;
+      console.log('PUT ' + url);
+      return $http.put(url, movil);
+    }
+
      return service;
    }
  ]);

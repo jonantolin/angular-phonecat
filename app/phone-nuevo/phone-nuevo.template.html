@@ -20,10 +20,10 @@
         <p class="help-block" ng-show="!formuMovil.name.$valid && !formuMovil.name.$pristine">Entre 2-50 caracteres</p>
       </div>
 
-      <div class="form-group" ng-class="{'has-success': formuMovil.description.$valid && !formuMovil.description.$pristine,
-      'has-error': !formuMovil.description.$valid && !formuMovil.description.$pristine }">
-        <label for="description">Descripción: </label>
-        <input class="form-control" type="text" ng-model="datosForm.description" name="description" minlength="5" 
+      <div class="form-group" ng-class="{'has-success': formuMovil.snippet.$valid && !formuMovil.snippet.$pristine,
+      'has-error': !formuMovil.snippet.$valid && !formuMovil.snippet.$pristine }">
+        <label for="snippet">Descripción: </label>
+        <input class="form-control" type="text" ng-model="datosForm.snippet" name="snippet" minlength="5" 
         maxlength="150" placeholder="Introduce descripción: (10-200 caracteres)" required>
         <p class="help-block" ng-show="!formuMovil.name.$valid && !formuMovil.name.$pristine">Entre 10-200 caracteres</p>
       </div>

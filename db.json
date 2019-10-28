@@ -1267,7 +1267,7 @@
       "age": 20,
       "id": "samsung-galaxy-s7",
       "imageUrl": "img/phones/samsung-galaxy-s7.0.jpg",
-      "name": "Samsung Galaxy S7",
+      "name": "Samsung Galaxy S7 Plus",
       "snippet": "El Galaxy S7 viene dispuesto a cumplir todas tus espectativas.",
       "flash": 2048,
       "ram": 4096,
@@ -1336,6 +1336,14 @@
         "flash": "16384MB",
         "ram": "4GB"
       }
+    },
+    {
+      "name": "movil de pruebass",
+      "snippet": "pruebaaaaaaa",
+      "imageUrl": "img/phones/movil-generico.svg",
+      "ram": 3921,
+      "flash": 2222,
+      "id": "QqvEhEs"
     }
   ]
 }

@@ -11,7 +11,7 @@ angular.
         self = this;
         self.mensaje = null;
 
-        $scope.datosForm = [];
+        $scope.datosForm = {};
 
         let id = $routeParams.phoneId;
         if(id){
@@ -41,13 +41,17 @@ angular.
 
          
 
+          if(!id){
           var movil = {
             "name": $scope.formuMovil.name.$viewValue,
-            "snippet": $scope.formuMovil.description.$viewValue,
+            "snippet": $scope.formuMovil.snippet.$viewValue,
             "imageUrl": "img/phones/movil-generico.svg",
             "ram": parseInt($scope.formuMovil.ram.$viewValue),
             "flash":  parseInt($scope.formuMovil.flash.$viewValue)
           }
+
+          
+
 
           Phone.insert(movil).then(
             response => {
@@ -62,6 +66,26 @@ angular.
               
             }
           );
+
+          }else{
+
+            Phone.update($scope.datosForm.id, $scope.datosForm).then(
+              response => {
+                console.log("Movil actualizado %o", response);
+                self.agregado = true;
+                self.mensaje = "Móvil actualizado";
+              },
+              response =>{ 
+                console.warn("Error actualizando movil %o", response);
+                self.agregado = false;
+                self.mensaje = "Error. No se ha podido actualizar el móvil";
+                
+              }
+
+            );
+
+
+          }
 
         }
     
