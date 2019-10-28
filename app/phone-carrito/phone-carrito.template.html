@@ -13,6 +13,7 @@
     <li class="list-group-item" ng-repeat='telefono in $ctrl.carrito'>
        
         <span class="badge">{{telefono.cantidad}}</span>
+        <button class="btn btn-danger btn-sm"ng-click="$ctrl.borrarProducto(telefono.id)"><i class="far fa-trash-alt"></i></button>
         <img ng-src="{{telefono.imagen}}" class="imagen-responsive peque" alt="{{telefono.name}}">
         <span>{{telefono.name}} </span>
  

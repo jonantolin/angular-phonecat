@@ -13,6 +13,11 @@ angular.
         
         console.log('controlador carrito');
 
+        self.borrarProducto = function(id){
+          compraMovil.removeProducto(id);
+          self.carrito = compraMovil.getProductos();
+        }
+
       }
     ]
   });

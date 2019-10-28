@@ -13,17 +13,17 @@ angular.
         },
         setProducto: function(p) {
           //todo cantidad actualizar
-            if(this.productos.get(p.id) != undefined ){
+            if(this.productos.get(p.id) != undefined ){ // Otra forma directa -> (!this.productos.get(p.id))
               this.productos.get(p.id).cantidad++;
 
             }else{
               this.productos.set(p.id, {"cantidad": 1, "imagen": p.imageUrl, "id": p.id, "name": p.name});
             }
            
-        }/*,
-        removeProducto: function(p){
-            this.productos.splice(this.productos.indexOf(p),1);
-        }*/
+        },
+        removeProducto: function(id){
+            this.productos.delete(id);
+        }
 
       }; //end return
     } // end function
